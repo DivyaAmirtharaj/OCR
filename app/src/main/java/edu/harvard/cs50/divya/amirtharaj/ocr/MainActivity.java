@@ -5,7 +5,7 @@
 //
 // Author:           Divya Amirtharaj
 //
-//
+// Description
 
 package edu.harvard.cs50.divya.amirtharaj.ocr;
 
