@@ -1,0 +1,46 @@
+apply plugin: 'com.android.application'
+
+android {
+    signingConfigs {
+        Rel1 {
+            keyAlias 'OCR'
+            keyPassword 'OCR'
+            storeFile file('C:/Android/OCR.txt')
+            storePassword 'OCR'
+        }
+    }
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "edu.harvard.cs50.divya.amirtharaj.OCR"
+        minSdkVersion 21
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors {
+    }
+    packagingOptions {
+        exclude 'project.properties'
+        exclude 'META-INF/INDEX.LIST'
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:support-v4:24.0.0'
+    implementation 'com.google.android.gms:play-services-vision:9.8.0'
+    implementation 'com.android.support:design:24.0.0'
+    implementation('com.google.cloud:google-cloud-translate:1.16.0') {
+        exclude group: 'org.apache.httpcomponents'
+        exclude group: 'org.json', module: 'json'
+    }
+    annotationProcessor 'com.google.cloud:google-cloud-translate:1.12.0'
+    implementation 'com.android.support:multidex:1.0.3'
+}

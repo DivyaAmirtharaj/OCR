@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="edu.harvard.cs50.divya.amirtharaj.ocr.MainActivity"
+                android:background="@color/common_google_signin_btn_text_dark_focused">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/ocr_header"
+        android:id="@+id/status_message"
+        android:layout_alignParentEnd="true"
+        android:textAlignment="center"
+        android:layout_centerHorizontal="true"
+        android:textSize="30sp"/>
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/is_translate"
+        android:id="@+id/is_translate"
+        android:checked="true"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/status_message"
+        android:fontFamily="sans-serif"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textSize="24sp" android:layout_toLeftOf="@+id/use_flash"
+        android:layout_toStartOf="@+id/use_flash"/>
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/auto_focus"
+        android:id="@+id/auto_focus"
+        android:checked="true"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/is_translate"
+        android:fontFamily="sans-serif"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textSize="24sp" android:layout_toLeftOf="@+id/use_flash"
+        android:layout_toStartOf="@+id/use_flash"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fps_text"
+        android:text="Frames per Second "
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/use_flash"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:fontFamily="sans-serif" android:textSize="24sp"
+        tools:textColor="?android:attr/textColorPrimary"
+        android:textColor="?android:attr/textColorPrimary"/>
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fps"
+        android:entries="@array/fps_array"
+        android:layout_alignTop="@+id/fps_text"
+        android:layout_toRightOf="@+id/fps_text"
+        android:layout_toEndOf="@+id/fps_text"
+        android:layout_alignBottom="@+id/fps_text"
+        android:fontFamily="sans-serif" android:textSize="30sp" android:textAlignment="textEnd"
+    />
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/use_flash"
+        android:id="@+id/use_flash"
+        android:checked="false"
+        android:fontFamily="sans-serif" android:textSize="24sp"
+        android:layout_alignBottom="@+id/auto_focus"
+        android:layout_toRightOf="@+id/fps"
+        android:layout_marginLeft="40dp" android:layout_marginStart="40dp"
+        android:layout_alignTop="@+id/auto_focus"
+        android:layout_alignParentRight="true" android:layout_alignParentEnd="true"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/font_size_text"
+        android:text="Font Size "
+        android:fontFamily="sans-serif" android:textSize="24sp" android:layout_alignTop="@+id/fps"
+        android:layout_alignLeft="@+id/use_flash" android:layout_alignStart="@+id/use_flash"
+        tools:textColor="?android:attr/textColorPrimary"
+        android:textColor="?android:attr/textColorPrimary"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lang_text"
+        android:text="Language"
+        android:fontFamily="sans-serif" android:textSize="24sp"
+        android:layout_alignBaseline="@+id/orientation"
+        android:layout_alignBottom="@+id/orientation" android:layout_alignLeft="@+id/font_size_text"
+        android:layout_alignStart="@+id/font_size_text"
+        tools:textColor="?android:attr/textColorPrimary"
+        android:textColor="?android:attr/textColorPrimary"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/read_text"
+        android:id="@+id/read_text"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="24sp"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:paddingLeft="20dp" android:paddingRight="20dp"
+        android:background="@android:color/holo_purple"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/orientation_text"
+        android:text="Orientation"
+        android:fontFamily="sans-serif" android:textSize="24sp"
+        android:paddingTop="15sp"
+        android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
+        tools:textColor="?android:attr/textColorPrimary"
+        android:textColor="?android:attr/textColorPrimary" android:layout_below="@+id/fps_text"/>
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/orientation"
+        android:entries="@array/orientation_array"
+        android:fontFamily="sans-serif" android:textSize="24sp" android:paddingTop="15sp"
+        android:layout_alignTop="@+id/orientation_text" android:layout_alignRight="@+id/fps"
+        android:layout_alignEnd="@+id/fps" android:textAlignment="textEnd"
+    />
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/font_size"
+        android:entries="@array/font_size_array"
+        android:fontFamily="sans-serif" android:textSize="30sp"
+        android:layout_alignBaseline="@+id/fps" android:layout_alignBottom="@+id/fps"
+        android:layout_alignParentRight="true" android:layout_alignParentEnd="true"
+        android:textAlignment="textEnd"
+    />
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lang"
+        android:entries="@array/lang_array"
+        android:fontFamily="sans-serif" android:textSize="30sp"
+        android:textAlignment="textEnd" android:layout_alignBottom="@+id/orientation"
+        android:layout_alignParentRight="true" android:layout_alignParentEnd="true"/>
+
+
+</RelativeLayout>

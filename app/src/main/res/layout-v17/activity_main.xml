@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+                android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                tools:context="edu.harvard.cs50.divya.amirtharaj.ocr.MainActivity"
+                android:background="@color/common_google_signin_btn_text_dark_focused">
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/is_translate"
+        android:id="@+id/is_translate"
+        android:checked="true"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/status_message"
+        android:fontFamily="sans-serif"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textSize="24sp" android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"/>
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/auto_focus"
+        android:id="@+id/auto_focus"
+        android:checked="true"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/is_translate"
+        android:fontFamily="sans-serif"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textSize="24sp" android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"/>
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/use_flash"
+        android:id="@+id/use_flash"
+        android:checked="false"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/auto_focus"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:fontFamily="sans-serif" android:textSize="24sp"
+        android:layout_alignParentRight="true" android:layout_alignParentEnd="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fps_text"
+        android:text="Frames per Second "
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/use_flash"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:fontFamily="sans-serif" android:textSize="24sp"
+        tools:textColor="?android:attr/textColorPrimary"
+        android:textColor="?android:attr/textColorPrimary"/>
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fps"
+        android:entries="@array/fps_array"
+        android:layout_alignTop="@+id/fps_text"
+        android:layout_alignBottom="@+id/fps_text"
+        android:fontFamily="sans-serif" android:textSize="24sp"
+        android:layout_alignParentRight="true" android:layout_alignParentEnd="true"
+        android:textAlignment="textEnd"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/font_size_text"
+        android:text="Font Size "
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/fps_text"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:fontFamily="sans-serif" android:textSize="24sp"
+        tools:textColor="?android:attr/textColorPrimary"
+        android:textColor="?android:attr/textColorPrimary"/>
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/font_size"
+        android:entries="@array/font_size_array"
+        android:layout_alignTop="@+id/font_size_text"
+        android:layout_alignBottom="@+id/font_size_text"
+        android:fontFamily="sans-serif" android:textSize="24sp"
+        android:layout_alignParentRight="true" android:layout_alignParentEnd="true"
+        android:textAlignment="textEnd"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/orientation_text"
+        android:text="Orientation"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/font_size_text"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:fontFamily="sans-serif" android:textSize="24sp"
+        tools:textColor="?android:attr/textColorPrimary"
+        android:textColor="?android:attr/textColorPrimary"/>
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/orientation"
+        android:entries="@array/orientation_array"
+        android:layout_alignTop="@+id/orientation_text"
+        android:layout_alignBottom="@+id/orientation_text"
+        android:fontFamily="sans-serif" android:textSize="24sp"
+        android:layout_alignParentRight="true" android:layout_alignParentEnd="true"
+        android:textAlignment="textEnd"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lang_text"
+        android:text="Language"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/orientation_text"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:fontFamily="sans-serif" android:textSize="24sp"
+        tools:textColor="?android:attr/textColorPrimary"
+        android:textColor="?android:attr/textColorPrimary"/>
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lang"
+        android:entries="@array/lang_array"
+        android:layout_alignTop="@+id/lang_text"
+        android:layout_alignBottom="@+id/lang_text"
+        android:fontFamily="sans-serif" android:textSize="30sp"
+        android:layout_alignParentRight="true" android:layout_alignParentEnd="true"
+        android:textAlignment="textEnd"
+        tools:textSize="30sp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/ocr_header"
+        android:id="@+id/status_message"
+        android:textAlignment="center"
+        android:textSize="30sp" android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true" android:layout_alignParentStart="true"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/read_text"
+        android:id="@+id/read_text"
+        android:textSize="24sp"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:paddingLeft="20dp" android:paddingRight="20dp"
+        android:layout_alignParentBottom="true" android:layout_centerHorizontal="true"
+        android:background="@android:color/holo_purple"/>
+
+
+</RelativeLayout>
