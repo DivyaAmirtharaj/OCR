@@ -25,6 +25,10 @@ Install following libraries by including following dependencies lines in OCR/app
 
 
 ## Setting up Translate API in Google
-[Sign in to Google API Console](https://console.cloud.google.com/apis/)
+>1. [Sign in to Google API Console](https://console.cloud.google.com/apis/)\
+>2. Use existing project or create "New Project"\
+>3. On the Google Cloud Platform dashboard, select "APIs & Services" on the navigation window at the left side\
+>4. Click on the "Enable APIs and Services" button\
+>5. Search for "Cloud Translation API" and click "Enable" button\
 
 
