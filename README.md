@@ -36,12 +36,9 @@ Translation of OCR text is done through Google API.  For that API service for tr
 ## Setting up API Credentials
 To secure the API service and to restrict the access to authorized apps, use following steps.
 
->1. To[Sign in to Google API Console](https://console.cloud.google.com/apis/)
->2. Use existing project or create "New Project"
->3. On the Google Cloud Platform dashboard, select "APIs & Services" on the navigation window at the left side
->4. Click on the "Enable APIs and Services" button
->5. Search for "Cloud Translation API" and click "Enable" button
->6. Click the "Enable billing" and setup the trial service and provide payment information.
-
+>1. Click "Create Credentials on the Google API Console
+>2. Select "Cloud Translation API", check "No, I'm not using them and click on "Which credentials do I need?"
+>3. Enter your information and select "JSON" as the key type and click "Cotinue"
+>4. The credentials file will be downloaded in JSON format.  Save this file in Android Studion raw folder
 
 
