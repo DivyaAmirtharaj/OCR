@@ -24,6 +24,19 @@ Install following libraries by including following dependencies lines in OCR/app
    implementation 'com.android.support:design:24.0.0'
    implementation('com.google.cloud:google-cloud-translate:1.16.0')
 ```
+## Compilation
+Have minimum SDK Version of 21 to have Translate API work.  Have following code in build.grade under android block.
+```
+   compileSdkVersion 26
+    defaultConfig {
+        applicationId "edu.harvard.cs50.divya.amirtharaj.OCR"
+        minSdkVersion 21
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+    }
+ ```
 
 ## Setting up Translate API in Google
 Translation of OCR text is done through Google API.  For that API service for transation needs to be set in Google API console.  Follow below step to setup the API service
@@ -55,4 +68,41 @@ Add internet permission to AndroidMaifest.xml
     <uses-permission android:name="android.permission.CAMERA"/>
     <uses-permission android:name="android.permission.INTERNET"/>
 ```
+
+## Text To Speech TTS
+TextToSpeech class used to speak the OCR captured and Translated Text.
+### Locale 
+Locale is used to set the language and country of speaker.
+```
+Locale locale = new Locale( <<Language>>, <<Country>>);
+TextToSpeech.OnInitListener listener =  new TextToSpeech.OnInitListener() {
+
+public void onInit(final int status) {  tts.setLanguage(locale); } };
+
+tts = new TextToSpeech(this.getApplicationContext(), listener);
+Locale.setDefault(locale);
+Configuration config = new Configuration();
+config.setLocale(locale);
+
+````
+Language  | Code | Country
+----------|----- | -------------
+English|en | US
+Spanish|es | MX
+French|fr | FR
+Japanese|ja | JP
+Chinese|zh | CN
+German|de | DE
+Italian|it | IT
+Korean|ko | KR
+Hindi|hi | KR
+Russian|ru | RU
+Arabic|ar | AE
+Greek|el | GR
+Hebrew|he | IL
+Vietnamese|vi | VN
+Tamil|ta | IN
+
+
+
 
