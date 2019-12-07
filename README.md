@@ -17,7 +17,7 @@ git clone https://github.com/DivyaAmirtharaj/OCR.git
 
 In Android Studio, open the OCR directory as an existing Android Studio project.
 
-Install following libraries by including following dependencies lines in OCR/app/build.grade file
+Install the following libraries by including the following lines in OCR/app/build.gradle
 ```
    implementation 'com.android.support:support-v4:24.0.0'
    implementation 'com.google.android.gms:play-services-vision:9.8.0'
