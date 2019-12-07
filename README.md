@@ -69,6 +69,18 @@ Add internet permission to AndroidMaifest.xml
     <uses-permission android:name="android.permission.INTERNET"/>
 ```
 
+## OCR 
+Following libraries are used for Character Recoginition
+```
+import com.google.android.gms.vision.text.TextRecognizer;
+import com.google.android.gms.vision.CameraSource;
+import com.google.android.gms.vision.text.TextBlock;
+import com.google.android.gms.common.images.Size;
+import com.google.android.gms.vision.Detector;
+import com.google.android.gms.vision.Frame;
+```
+
+
 ## Text To Speech TTS
 TextToSpeech class used to speak the OCR captured and Translated Text.
 ### Locale 
@@ -104,5 +116,31 @@ Vietnamese|vi | VN
 Tamil|ta | IN
 
 
+## Translation 
+Following libraries are used for Translation
+```
+import com.google.auth.oauth2.GoogleCredentials;
+import com.google.cloud.translate.Translate;
+import com.google.cloud.translate.TranslateOptions;
+import com.google.cloud.translate.Translation;
+```
+### Credentials
+Credential file generated from the Google API service is stored res/raw folder as cred.json
 
+```
+ try (InputStream is = getResources().openRawResource(R.raw.cred)) {
+      final GoogleCredentials myCredentials = GoogleCredentials.fromStream(is);
+   } catch (IOException ioe) {
+      ioe.printStackTrace();
+   }
+```        
 
+### Starting Translate Service
+Using the above credentials to call the API service
+```
+TranslateOptions translateOptions = TranslateOptions.newBuilder().setCredentials(myCredentials).build();
+OCRSettings.setTranslate( translateOptions.getService());
+```
+Translate translate = translateOptions.getService()
+Translation translation = translate.translate(<<inputText>>, Translate.TranslateOption.targetLanguage(OCRSettings.getLang()), Translate.TranslateOption.model("base"));
+```
